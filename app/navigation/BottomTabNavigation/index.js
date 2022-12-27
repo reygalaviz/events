@@ -3,11 +3,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../../screens/HomeScreen";
 import MessagesScreen from "../../screens/MessagesScreen";
+import NotificationScreen from "../../screens/NotificationScreen";
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
 const MessagesStack = createNativeStackNavigator();
-const WorldStack = createNativeStackNavigator();
+const NotificationStack = createNativeStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator
@@ -31,6 +32,20 @@ const MessagesStackScreen = () => (
   </MessagesStack.Navigator>
 );
 
+const NotificationStackScreen = () => (
+  <NotificationStack.Navigator
+    screenOptions={{
+      contentStyle: { backgroundColor: "white" },
+      headerShown: false,
+    }}
+  >
+    <NotificationStack.Screen
+      name="NotificationScreen"
+      component={NotificationScreen}
+    />
+  </NotificationStack.Navigator>
+);
+
 function BottomTabNavigation(props) {
   return (
     <Tab.Navigator
@@ -41,6 +56,7 @@ function BottomTabNavigation(props) {
     >
       <Tab.Screen name="HomeTab" component={HomeStackScreen} />
       <Tab.Screen name="MessagesTab" component={MessagesStackScreen} />
+      <Tab.Screen name="NotificationTab" component={NotificationStackScreen} />
     </Tab.Navigator>
   );
 }

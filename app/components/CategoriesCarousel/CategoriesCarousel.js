@@ -60,11 +60,10 @@ function CategoriesCarousel() {
   const ref = useRef();
   const [index, setIndex] = useState(0);
   useEffect(() => {
-    ref.current.scrollToIndex({
+    ref.current?.scrollToIndex({
       index,
       amimated: true,
-      viewOffset: 20,
-      viewPosition: 0.2,
+      viewPosition: 0.5,
     });
   }, [index]);
 
@@ -76,6 +75,7 @@ function CategoriesCarousel() {
       horizontal
       style={styles.container}
       keyExtractor={(item) => item.id}
+      contentContainerStyle={{ paddingLeft: constants.m }}
       decelerationRate="fast"
       showsHorizontalScrollIndicator={false}
       renderItem={({ item, index: fIndex }) => {

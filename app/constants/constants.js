@@ -56,6 +56,16 @@ export default {
   cardPart: RFValue(11),
   avatarFontSize: RFValue(7),
 
+  //messagebox
+  messageWidth: width * 0.6,
+
+  //notificationbox
+  notiFont: RFValue(10),
+  notiWidth: width * 0.4,
+  notiButtonWidth: width * 0.2,
+  notifButtonHeight: height * 0.029,
+  notiButttonFont: RFValue(9),
+
   //spacing
   s: 8,
   m: 15,

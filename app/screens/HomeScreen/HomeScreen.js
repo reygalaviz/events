@@ -48,6 +48,7 @@ function HomeScreen({ navigation }) {
             setValue={setSearch}
             enabled
             search
+            style={{ height: 40 }}
           />
         </View>
         <CategoriesCarousel />

@@ -10,9 +10,10 @@ function CustomInput({
   secureTextEntry,
   enabled,
   search,
+  style,
 }) {
   return (
-    <View style={enabled ? styles.container : disabledStyles.container}>
+    <View style={[enabled ? styles.container : disabledStyles.container]}>
       <TextInput
         value={value}
         onChangeText={setValue}
@@ -21,7 +22,7 @@ function CustomInput({
         selectTextOnFocus={enabled}
         disabled={enabled}
         placeholder={placeholder}
-        style={styles.input}
+        style={[styles.input, style]}
       />
       <View style={styles.searchIcon}>
         {search && <Entypo name="magnifying-glass" size={24} color="#c6c6c6" />}
