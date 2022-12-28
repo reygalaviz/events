@@ -2,11 +2,19 @@ import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import constants from "../../constants/constants";
 
-function CustomButton({ onPress, text, type = "PRIMARY", bgColor, fgColor }) {
+function CustomButton({
+  onPress,
+  text,
+  type = "PRIMARY",
+  bgColor,
+  fgColor,
+  style,
+}) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
+        style,
         styles.container,
         styles[`container_${type}`],
         bgColor ? { backgroundColor: bgColor } : {},

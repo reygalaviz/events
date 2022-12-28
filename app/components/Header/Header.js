@@ -1,26 +1,49 @@
-import React from "react";
-import { TouchableOpacity, View, StyleSheet, Text } from "react-native";
+import React, { useState } from "react";
+import {
+  TouchableOpacity,
+  View,
+  StyleSheet,
+  Text,
+  Pressable,
+} from "react-native";
 import constants from "../../constants/constants";
-import { Ionicons, AntDesign, Foundation } from "@expo/vector-icons";
+import { Foundation } from "@expo/vector-icons";
 
-function Header({ onPress }) {
+function Header({ onCancelPress, cancel, avatar, nameLocation, create }) {
   return (
     <View style={styles.container}>
-      <View style={styles.left}>
-        <TouchableOpacity onPress={onPress}>
-          <View style={styles.avatar}></View>
-        </TouchableOpacity>
-        <View style={styles.userInfo}>
-          <Text style={styles.text}>John Doe</Text>
-          <View style={styles.location}>
-            <Foundation name="marker" size={15} color="black" />
-            <Text
-              style={[styles.text, { paddingLeft: constants.locationSpacing }]}
-            >
-              Charlotte, North Carolina
-            </Text>
+      <View style={styles.viewIcons}>
+        {cancel && (
+          <TouchableOpacity onPress={onCancelPress}>
+            <Text style={styles.cancelText}>Cancel</Text>
+          </TouchableOpacity>
+        )}
+        {avatar && <View style={styles.avatar}></View>}
+
+        {nameLocation && (
+          <View style={styles.userInfo}>
+            <Text style={styles.text}>John Doe</Text>
+            <View style={styles.location}>
+              <Foundation name="marker" size={15} color="black" />
+              <Text
+                style={[
+                  styles.text,
+                  { paddingLeft: constants.locationSpacing },
+                ]}
+              >
+                Charlotte, North Carolina
+              </Text>
+            </View>
           </View>
-        </View>
+        )}
+      </View>
+
+      <View style={[styles.viewIcons, styles.rightView]}>
+        {create && (
+          <Pressable style={styles.createButton}>
+            <Text style={styles.createText}>Create</Text>
+          </Pressable>
+        )}
       </View>
     </View>
   );
@@ -31,11 +54,18 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     height: constants.appHeader,
     paddingHorizontal: constants.m,
-    justifyContent: "center",
-  },
-  left: {
-    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+  },
+
+  viewIcons: {
+    alignItems: "center",
+    flexDirection: "row",
+    height: "100%",
+  },
+  rightView: {
+    justifyContent: "flex-end",
   },
   userInfo: {
     paddingLeft: constants.userPaddingLeft,
@@ -53,6 +83,24 @@ const styles = StyleSheet.create({
   location: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  createButton: {
+    width: 80,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#467fd7",
+    borderRadius: 10,
+  },
+  cancelText: {
+    fontSize: constants.cancelText,
+    fontWeight: "500",
+    color: constants.titleColor,
+  },
+  createText: {
+    fontSize: constants.createText,
+    color: "white",
+    fontWeight: "500",
   },
 });
 

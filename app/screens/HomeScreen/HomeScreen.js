@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import Header from "../../components/Header";
@@ -6,8 +6,11 @@ import EventsCarousel from "../../components/EventsCarousel";
 import constants from "../../constants/constants";
 import CategoriesCarousel from "../../components/CategoriesCarousel/CategoriesCarousel";
 import Divider from "../../components/Divider";
+import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 function HomeScreen({ navigation }) {
+  const bottomSheetRef = useRef();
+  const snapPoints = ["100%"];
   const events = [
     {
       id: 1,
@@ -38,7 +41,7 @@ function HomeScreen({ navigation }) {
   const [search, setSearch] = useState("");
   return (
     <>
-      <Header />
+      <Header avatar nameLocation />
       <ScrollView style={styles.container}>
         <View style={{ paddingHorizontal: constants.m }}>
           <Text style={styles.title}>Find events near you</Text>

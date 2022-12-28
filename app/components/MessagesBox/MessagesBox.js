@@ -8,7 +8,7 @@ function MessagesBox(props) {
       <View style={styles.header}>
         <View style={styles.avatar} />
         <View>
-          <Text>Pete Carroll</Text>
+          <Text style={styles.messageUser}>Pete Carroll</Text>
           <Text numberOfLines={1} style={styles.message}>
             We will meet @ 10, don't forget to pick up a couple of drinks and
             some snacks
@@ -16,7 +16,7 @@ function MessagesBox(props) {
         </View>
       </View>
       <View>
-        <Text>6:03 pm</Text>
+        <Text style={styles.messageTime}>6:03 pm</Text>
       </View>
     </Pressable>
   );
@@ -39,8 +39,17 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     marginRight: constants.s,
   },
+  messageUser: {
+    fontSize: constants.userText,
+    fontWeight: "500",
+  },
   message: {
+    fontSize: constants.userMessage,
     width: constants.messageWidth,
+    color: "#8d8d8d",
+  },
+  messageTime: {
+    color: "#8d8d8d",
   },
 });
 

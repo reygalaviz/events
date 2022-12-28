@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import Header from "../../components/Header";
-import EventsCarousel from "../../components/EventsCarousel";
 import constants from "../../constants/constants";
-import CategoriesCarousel from "../../components/CategoriesCarousel/CategoriesCarousel";
-import Divider from "../../components/Divider";
 import MessagesBox from "../../components/MessagesBox";
 
 function MessagesScreen({ navigation }) {
   const [messages, setMessages] = useState("");
   return (
     <>
-      <Header />
+      <Header avatar nameLocation />
 
       <View style={{ paddingHorizontal: constants.m }}>
         <Text style={styles.title}>Messages</Text>

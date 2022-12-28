@@ -11,9 +11,10 @@ function CustomInput({
   enabled,
   search,
   style,
+  containerStyle,
 }) {
   return (
-    <View style={[enabled ? styles.container : disabledStyles.container]}>
+    <View style={[styles.container, containerStyle]}>
       <TextInput
         value={value}
         onChangeText={setValue}

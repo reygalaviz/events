@@ -9,7 +9,7 @@ import constants from "../../constants/constants";
 function NotificationScreen(props) {
   return (
     <>
-      <Header />
+      <Header avatar nameLocation />
 
       <View style={{ paddingHorizontal: constants.m }}>
         <Text style={styles.title}>Notifications</Text>

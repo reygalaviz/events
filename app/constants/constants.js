@@ -10,6 +10,9 @@ export default {
   paddingBottom: height * 0.05,
   marginBottom: height * 0.04,
 
+  //bottom nav bar
+  navMargin: height * 0.002,
+
   //input box
   height: height * 0.06,
 
@@ -19,6 +22,8 @@ export default {
   headerText: RFValue(10),
   userPaddingLeft: width * 0.02,
   locationSpacing: width * 0.01,
+  cancelText: RFValue(14),
+  createText: RFValue(12),
 
   //categories
   active: "#383838",
@@ -31,7 +36,7 @@ export default {
 
   //text size
   title: RFValue(20),
-  sectionTitle: RFValue(13),
+  sectionTitle: RFValue(15),
   eventTitle: RFValue(12),
   eventSubtitle: RFValue(11),
   inputBoxText: RFValue(12),
@@ -58,6 +63,9 @@ export default {
 
   //messagebox
   messageWidth: width * 0.6,
+  userText: RFValue(13),
+  userMessage: RFValue(11),
+  messageTime: RFValue(11),
 
   //notificationbox
   notiFont: RFValue(10),
@@ -66,6 +74,10 @@ export default {
   notifButtonHeight: height * 0.029,
   notiButttonFont: RFValue(9),
 
+  //add screen
+  descriptionBox: height * 0.2,
+  descriptionPadBottom: height * 0.15,
+  dateBoxWidth: width * 0.45,
   //spacing
   s: 8,
   m: 15,
