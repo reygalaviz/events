@@ -8,15 +8,18 @@ function MessagesBox(props) {
       <View style={styles.header}>
         <View style={styles.avatar} />
         <View>
-          <Text style={styles.messageUser}>Pete Carroll</Text>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={styles.messageUser}>Rey Galaviz</Text>
+            <Text style={styles.messageTime}>1:12 pm</Text>
+          </View>
+
           <Text numberOfLines={1} style={styles.message}>
             We will meet @ 10, don't forget to pick up a couple of drinks and
             some snacks
           </Text>
         </View>
-      </View>
-      <View>
-        <Text style={styles.messageTime}>6:03 pm</Text>
       </View>
     </Pressable>
   );
@@ -25,7 +28,8 @@ function MessagesBox(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: constants.m,
+    marginVertical: constants.s,
+    paddingRight: constants.m,
     flexDirection: "row",
   },
   header: {
@@ -50,6 +54,7 @@ const styles = StyleSheet.create({
   },
   messageTime: {
     color: "#8d8d8d",
+    fontSize: constants.timeText,
   },
 });
 

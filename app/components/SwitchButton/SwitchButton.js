@@ -18,7 +18,7 @@ function SwitchButton({ onValueChange, value, title }) {
         ios_backgroundColor="#e2e2e2"
         onValueChange={onValueChange}
         value={value}
-        style={{ transform: [{ scaleX: 0.6 }, { scaleY: 0.6 }] }}
+        style={{ transform: [{ scaleX: 0.65 }, { scaleY: 0.65 }] }}
       />
     </View>
   );

@@ -1,29 +1,33 @@
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { Platform, Dimensions } from "react-native";
 
-var height = Dimensions.get("window").height;
-var width = Dimensions.get("window").width;
+const { width, height } = Dimensions.get("window");
+
+const guidelineBaseWidth = 375;
+const guidelineBaseHeight = 812;
+
+const horizontalScale = (size) => (width / guidelineBaseWidth) * size;
+const verticalScale = (size) => (height / guidelineBaseHeight) * size;
+const moderateScale = (size, factor = 0.5) =>
+  size + (horizontalScale(size) - size) * factor;
 
 export default {
   //intro screens
   paddingTop: Platform.OS === "ios" ? height * 0.1 : 0,
   paddingBottom: height * 0.05,
   marginBottom: height * 0.04,
-
-  //bottom nav bar
-  navMargin: height * 0.002,
-
-  //input box
-  height: height * 0.06,
+  textBox: verticalScale(50),
 
   //header
-  appHeader: height * 0.06,
-  horPadding: width * 0.05,
+  appHeader: verticalScale(50),
+  headerAddScreen: verticalScale(20),
   headerText: RFValue(10),
-  userPaddingLeft: width * 0.02,
-  locationSpacing: width * 0.01,
+  userPaddingLeft: horizontalScale(8),
+  locationSpacing: horizontalScale(5),
   cancelText: RFValue(14),
-  createText: RFValue(12),
+  createText: RFValue(13),
+  createButtonW: horizontalScale(80),
+  createButtonH: verticalScale(35),
 
   //categories
   active: "#383838",
@@ -32,10 +36,10 @@ export default {
   inactiveText: "black",
 
   //divider
-  marginTop: height * 0.01,
+  marginTop: verticalScale(10),
 
   //text size
-  title: RFValue(20),
+  title: RFValue(18),
   sectionTitle: RFValue(15),
   eventTitle: RFValue(12),
   eventSubtitle: RFValue(11),
@@ -52,32 +56,47 @@ export default {
   subColor: "#8d8d8d",
   titleColor: "#383838",
   sectionColor: "#555555",
+  borderColor: "#555555",
 
   //event cards
-  cardWidth: width,
-  cardHeight: height * 0.3,
+  cardWidth: horizontalScale(270),
+  cardHeight: verticalScale(250),
   cardTitle: RFValue(11),
   cardLocation: RFValue(9),
   cardPart: RFValue(11),
   avatarFontSize: RFValue(7),
 
   //messagebox
-  messageWidth: width * 0.6,
+  messageWidth: horizontalScale(290),
   userText: RFValue(13),
   userMessage: RFValue(11),
   messageTime: RFValue(11),
+  timeText: RFValue(12),
 
   //notificationbox
   notiFont: RFValue(10),
-  notiWidth: width * 0.4,
-  notiButtonWidth: width * 0.2,
-  notifButtonHeight: height * 0.029,
+  notiWidth: horizontalScale(150),
+  notiButtonWidth: moderateScale(70),
+  notifButtonHeight: moderateScale(20),
   notiButttonFont: RFValue(9),
 
   //add screen
   descriptionBox: height * 0.2,
   descriptionPadBottom: height * 0.15,
   dateBoxWidth: width * 0.45,
+
+  //profile
+  editBtnWidth: horizontalScale(210),
+  editBtnHeight: verticalScale(25),
+  editBtnMargin: verticalScale(20),
+  nameSize: RFValue(18),
+  usernameSize: RFValue(12),
+  bioSize: RFValue(13),
+  followSize: RFValue(11),
+
+  //bottom nav
+  iconSize: moderateScale(17),
+
   //spacing
   s: 8,
   m: 15,

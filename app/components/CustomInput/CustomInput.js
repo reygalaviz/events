@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    height: constants.height,
+    height: constants.textBox,
     fontSize: constants.inputBoxText,
   },
   searchIcon: {},

@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import constants from "../../constants/constants";
 
-const CARD_WIDTH = constants.cardWidth - 150;
+const CARD_WIDTH = constants.cardWidth;
 const CARD_WIDTH_SPACING = CARD_WIDTH + constants.l;
 
 function Carousel({ renderItem, items = [] }) {
@@ -21,7 +21,7 @@ function Carousel({ renderItem, items = [] }) {
             index,
             style: {
               width: CARD_WIDTH,
-              height: constants.cardHeight + 30,
+              height: constants.cardHeight,
               marginLeft: index == items[0] ? 0 : constants.m,
               // marginLeft: constants.m,
               marginRight: index === items.length - 1 ? constants.m : 0,

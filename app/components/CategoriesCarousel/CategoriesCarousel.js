@@ -8,9 +8,14 @@ import {
   Pressable,
 } from "react-native";
 import constants from "../../constants/constants";
+import Divider from "../Divider/Divider";
 
 function CategoriesCarousel() {
   const categories = [
+    {
+      id: 0,
+      name: "you",
+    },
     {
       id: 1,
       name: "all",
@@ -83,7 +88,7 @@ function CategoriesCarousel() {
           <Pressable
             style={{
               marginVertical: constants.s,
-              marginRight: constants.s / 2,
+              marginRight: fIndex === 0 ? constants.m : constants.s / 2,
               paddingHorizontal: constants.m,
               paddingVertical: constants.s,
               borderColor: constants.active,
@@ -115,6 +120,15 @@ function CategoriesCarousel() {
 
 const styles = StyleSheet.create({
   container: { flexGrow: 0 },
+  youContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: constants.m,
+    backgroundColor: "#e2e2e2",
+    paddingVertical: constants.s,
+    paddingHorizontal: constants.m,
+    borderRadius: 12,
+  },
 });
 
 export default CategoriesCarousel;

@@ -13,13 +13,15 @@ import MessagesScreen from "../../screens/MessagesScreen";
 import NotificationScreen from "../../screens/NotificationScreen";
 import ProfileScreen from "../../screens/ProfileScreen";
 import AddBottomSheet from "../../components/AddBottomSheet";
+import constants from "../../constants/constants";
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
 const MessagesStack = createNativeStackNavigator();
 const NotificationStack = createNativeStackNavigator();
 const ProfileStack = createNativeStackNavigator();
-const AddStack = createNativeStackNavigator();
+
+var iconSize = constants.iconSize;
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator
@@ -96,7 +98,7 @@ function BottomTabNavigation({ navigation }) {
               <View style={styles.container}>
                 <Entypo
                   name="home"
-                  size={20}
+                  size={iconSize}
                   color={focused ? "black" : "#aaaaaa"}
                 />
               </View>
@@ -111,7 +113,7 @@ function BottomTabNavigation({ navigation }) {
               <View style={styles.container}>
                 <MaterialCommunityIcons
                   name="message-reply"
-                  size={20}
+                  size={iconSize}
                   color={focused ? "black" : "#aaaaaa"}
                 />
               </View>
@@ -135,7 +137,7 @@ function BottomTabNavigation({ navigation }) {
               <View style={styles.container}>
                 <Octicons
                   name="bell-fill"
-                  size={20}
+                  size={iconSize}
                   color={focused ? "black" : "#aaaaaa"}
                 />
               </View>
@@ -150,7 +152,7 @@ function BottomTabNavigation({ navigation }) {
               <View style={styles.container}>
                 <FontAwesome5
                   name="user-alt"
-                  size={20}
+                  size={iconSize}
                   color={focused ? "black" : "#aaaaaa"}
                 />
               </View>

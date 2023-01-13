@@ -11,6 +11,10 @@ function VerifyEmailScreen({ navigation }) {
     navigation.navigate("HomeScreen");
   };
 
+  const onSignInPress = () => {
+    navigation.navigate("SignInScreen");
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
@@ -27,7 +31,11 @@ function VerifyEmailScreen({ navigation }) {
 
         <CustomButton onPress={onSubmitCode} text="Submit" />
         <CustomButton text="Resend Code" type="SECONDARY" />
-        <CustomButton text="Back to Sign In" type="TERTIARY" />
+        <CustomButton
+          onPress={onSignInPress}
+          text="Back to Sign In"
+          type="TERTIARY"
+        />
       </View>
     </ScrollView>
   );

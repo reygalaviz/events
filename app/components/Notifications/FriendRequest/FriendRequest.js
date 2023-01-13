@@ -30,7 +30,8 @@ function FriendRequest(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: constants.m,
+    paddingHorizontal: constants.m,
+    paddingVertical: constants.s,
     flexGrow: 0,
     flexDirection: "row",
     justifyContent: "space-between",

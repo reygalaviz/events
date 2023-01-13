@@ -25,7 +25,8 @@ function EventReminder(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: constants.m,
+    paddingHorizontal: constants.m,
+    paddingVertical: constants.s,
     flexDirection: "row",
     flexGrow: 0,
     justifyContent: "space-between",

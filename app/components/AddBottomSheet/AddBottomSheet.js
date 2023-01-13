@@ -4,6 +4,7 @@ import Header from "../Header";
 import AddEventButton from "../AddEventButton";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import { Portal, PortalHost } from "@gorhom/portal";
+import { StyleSheet } from "react-native";
 import AddEventScreen from "../../screens/AddEventScreen";
 
 function AddBottomSheet(props) {
@@ -36,11 +37,16 @@ function AddBottomSheet(props) {
           handleIndicatorStyle={{ display: "none" }}
           enablePanDownToClose={false}
           enableOverDrag={false}
-          style={{ marginTop: constants.l }}
+          style={{}}
         >
-          <Header cancel onCancelPress={onCancelPress} create />
+          <Header
+            cancel
+            onCancelPress={onCancelPress}
+            create
+            style={styles.header}
+          />
           <BottomSheetScrollView>
-            <AddEventScreen onCancelPress={onCancelPress} />
+            <AddEventScreen />
           </BottomSheetScrollView>
         </BottomSheet>
       </Portal>
@@ -48,5 +54,11 @@ function AddBottomSheet(props) {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    marginTop: constants.headerAddScreen,
+  },
+});
 
 export default AddBottomSheet;

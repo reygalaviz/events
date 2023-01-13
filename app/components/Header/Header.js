@@ -9,9 +9,17 @@ import {
 import constants from "../../constants/constants";
 import { Foundation } from "@expo/vector-icons";
 
-function Header({ onCancelPress, cancel, avatar, nameLocation, create }) {
+function Header({
+  onCancelPress,
+  cancel,
+  avatar,
+  nameLocation,
+  create,
+  style,
+  username,
+}) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <View style={styles.viewIcons}>
         {cancel && (
           <TouchableOpacity onPress={onCancelPress}>
@@ -19,6 +27,7 @@ function Header({ onCancelPress, cancel, avatar, nameLocation, create }) {
           </TouchableOpacity>
         )}
         {avatar && <View style={styles.avatar}></View>}
+        {username && <Text style={styles.usernameText}>galavizjunior11</Text>}
 
         {nameLocation && (
           <View style={styles.userInfo}>
@@ -77,6 +86,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     backgroundColor: "red",
   },
+  usernameText: {
+    fontSize: constants.usernameSize,
+  },
   text: {
     fontSize: constants.headerText,
   },
@@ -85,8 +97,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   createButton: {
-    width: 80,
-    height: 40,
+    width: constants.createButtonW,
+    height: constants.createButtonH,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#467fd7",

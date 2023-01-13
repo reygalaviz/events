@@ -37,6 +37,7 @@ function MessagesScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: constants.m,
   },
   title: {
     fontSize: constants.title,
